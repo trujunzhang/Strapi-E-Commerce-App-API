@@ -1,11 +1,13 @@
 version: '3'
 services:
-  strapi:
-    image: strapi/strapi
+  web:
     container_name: strapiexample
     env_file: .env
+    build: .
+    command: npm run develop
     volumes:
-      - .:/srv/app
+      - .:/usr/app/
+      - /usr/app/node_modules
     ports:
       - '1337:1337'
     restart: always
