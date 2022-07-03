@@ -2,6 +2,8 @@ version: '3'
 services:
   strapi:
     image: strapi/strapi
+    container_name: strapiexample
+    env_file: .env
     volumes:
       - ./app:/srv/app
     ports:
